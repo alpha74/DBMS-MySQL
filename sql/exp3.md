@@ -59,12 +59,12 @@
 ```
 5. 
 ```	
-    UPDATE employee SET job_title = 'Asst. Professor' WHERE enum = '9204' ;
+    	UPDATE employee SET job_title = 'Asst. Professor' WHERE enum = '9204' ;
 ```
 
 6. 
 ```	
-    DELETE FROM employee WHERE fname = 'Jyotirmay' AND hiredate = '1999-04-25' AND job_title = 'Sr. Lecturer' ;
+    	DELETE FROM employee WHERE fname = 'Jyotirmay' AND hiredate = '1999-04-25' AND job_title = 'Sr. Lecturer' ;
 ```
 	
 7. 
