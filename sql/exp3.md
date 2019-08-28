@@ -1,11 +1,11 @@
+# Solution : Experiment-3
 
-===============
- EXPERIMENT 3
-===============
+**AIM**: Demonstration of relational database creation EMPLOYEE and execution of simple queries.
 
-AIM: Demonstration of relational database creation EMPLOYEE and execution of simple queries.
+---
 
-1. 
+1.  
+``` 
 	CREATE TABLE employee
     -> (
     -> enum numeric(4,0) not null unique primary key,
@@ -40,36 +40,51 @@ AIM: Demonstration of relational database creation EMPLOYEE and execution of sim
 	| tax        | decimal(6,2)                                                                        | NO   |     | NULL    |       |
 	| department | enum('Biotechnology','Computer Science','Nano Technology','Information Technology') | NO   |     | NULL    |       |
 	+------------+-------------------------------------------------------------------------------------+------+-----+---------+-------+
+```
 	
 2.
+```
 	INSERT INTO employee VALUES ( '9201', 'Sangeet', 'R', 'Shrama', '1965-11-08', 'M', '11MH456633', 'Professor', 1200900.00, '1990-12-16', 120090.00, 'Computer Science' ) ;
+```
 	 
 3. 
+```
 	SELECT * FROM employee WHERE job_title = 'Professor' ;
+```
 	
 4.
+```
 	-> SELECT enum, fname, mname, lname, birthdate, salary, gender FROM employee ;
 	-> SELECT enum, ssn, job_title, department, hiredate, tax FROM employee ;
-
+```
 5. 
-	UPDATE employee SET job_title = 'Asst. Professor' WHERE enum = '9204' ;
+```	
+    UPDATE employee SET job_title = 'Asst. Professor' WHERE enum = '9204' ;
+```
 
 6. 
-	DELETE FROM employee WHERE fname = 'Jyotirmay' AND hiredate = '1999-04-25' AND job_title = 'Sr. Lecturer' ;
+```	
+    DELETE FROM employee WHERE fname = 'Jyotirmay' AND hiredate = '1999-04-25' AND job_title = 'Sr. Lecturer' ;
+```
 	
 7. 
+```
 	START TRANSACTION ;
 	<insert/update/delete/alter/drop query>
 	ROLLBACK ;
-	
+```
+
 8. 
+```
 	SELECT fname, ssn, job_title as designation, department FROM employee ;
-	
+```
+
 9.
+```
 	-> INSERT INTO employee VALUES
 	-> ( '9211', 'Deepak', 'M', 'Lakhanpal', '1978-02-28', 'M', '14OR333567', 'Lecturer', 120000.00, '1999-04-22', 12000.00, 'Biotechnology' ) ;
+```	
 	
-	
-====================================================== END ========================================================================	
+---
 
 	
