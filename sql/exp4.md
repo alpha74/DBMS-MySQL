@@ -1,9 +1,9 @@
+# Solution : Experiment-4
 
-===============
- EXPERIMENT 4
-===============
 
-AIM: Establishing an environment for relational database management and data retrieval from Oracle.
+**AIM**: Establishing an environment for relational database management and data retrieval from Oracle.
+
+---
 
 	<desc emp>
 		+-------+--------------+------+-----+---------+-------+
@@ -16,8 +16,8 @@ AIM: Establishing an environment for relational database management and data ret
 		| dnum  | decimal(3,0) | NO   | MUL | NULL    |       |
 		| mgr   | decimal(3,0) | NO   |     | NULL    |       |
 		+-------+--------------+------+-----+---------+-------+		
+        
 	<desc dept>
-
 		+-------+--------------+------+-----+---------+-------+
 		| Field | Type         | Null | Key | Default | Extra |
 		+-------+--------------+------+-----+---------+-------+
@@ -28,7 +28,6 @@ AIM: Establishing an environment for relational database management and data ret
 		+-------+--------------+------+-----+---------+-------+
 		
 	<desc supplier>
-
 		+-------+--------------+------+-----+---------+-------+
 		| Field | Type         | Null | Key | Default | Extra |
 		+-------+--------------+------+-----+---------+-------+
@@ -38,7 +37,6 @@ AIM: Establishing an environment for relational database management and data ret
 		+-------+--------------+------+-----+---------+-------+
 
 	<desc supply>
-		
 		+-------+--------------+------+-----+---------+-------+
 		| Field | Type         | Null | Key | Default | Extra |
 		+-------+--------------+------+-----+---------+-------+
@@ -49,42 +47,46 @@ AIM: Establishing an environment for relational database management and data ret
 		+-------+--------------+------+-----+---------+-------+
 		
 		
-===================
+---
 
-1.
+1.  ```
 	SELECT name, sal FROM emp WHERE dnum = 26 ;
+    ```
 	
-2.
-	
+2.  ```
 	 SELECT DISTINCT(supplier.name), dept.dnum, dept.name
     -> FROM supplier, dept, supply
     -> WHERE supplier.snum = supply.snum AND
     -> dept.dnum = supply.dnum
     -> AND dept.name = 'Personnel' ;
+    ```
 	
-3.
+3.  ```
 	 SELECT DISTINCT(supplier.name)
     -> FROM supplier, dept, supply
     -> WHERE supplier.snum = supply.snum AND
     -> dept.dnum = supply.dnum
     -> AND supplier.city = 'UMR'
     -> AND dept.area = 'N' ;
-	
-4.
+	```
+   
+4.  ```
 	SELECT emp.name, dept.name
     -> FROM emp, dept
     -> WHERE emp.dnum = dept.dnum
     -> AND
     -> emp.name LIKE 'A%' ;
+    ```
 	
-5.
+5.  ```
 	SELECT supplier.name, supply.qty, dept.name
     -> FROM supplier, supply, dept
     -> WHERE supplier.snum = supply.snum
     -> AND supply.dnum = dept.dnum
     -> AND supply.pnum = 'KK78' ;
+    ```
 	
-6.
+6.  ```
 	CREATE TABLE emp_admn AS ( SELECT enum, name, dnum, mgr FROM emp ) ;
 
 	<desc emp_admn>
@@ -108,30 +110,35 @@ AIM: Establishing an environment for relational database management and data ret
 		| sal   | decimal(9,2) | NO   |     | NULL    |       |
 		| tax   | decimal(8,2) | YES  |     | NULL    |       |
 		+-------+--------------+------+-----+---------+-------+
+     ```
 	
-7.
+7.  ```
 	SELECT enum, name, sal AS grs_pay, (sal-tax) AS net_pay FROM emp ;
+    ```
 	
-8.
+8.  ```
 	INSERT INTO dept VALUES
     -> ( 988, 'Inventory&Purchase', 'S', 23 ) ;
 	
 	INSERT INTO emp VALUES
     -> ( 9218, 'Jyotika', 890270.00, 89000.00, 988, 23 ) ;
+    ```
 	
-9.
+9.  ```
 	SELECT emp.enum, emp.name
     -> FROM emp, dept
     -> WHERE emp.dnum = dept.dnum
     -> AND dept.area = 'S'
     -> AND emp.sal > 800000 ;
+    ```
 	
-10.
+10. ```
 	SELECT dept.name AS dep_name, supplier.name AS supplier_name
     -> FROM dept, supply, supplier
     -> WHERE supplier.snum = supply.snum
     -> AND dept.dnum = supply.dnum
     -> AND supply.pnum = 'PD33' ;
+    ```
 	
 
-================================================= END ======================================================================	
+---
