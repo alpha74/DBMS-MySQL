@@ -1,10 +1,8 @@
+# Solution : Experiment-1
 
-===============
- EXPERIMENT 6
-===============
+**AIM**: Establishing an environment for relational database management and data retrieval for the given database. Also, implementation of the ad-hoc query applications in a relational database using SQL.
 
-AIM: Establishing an environment for relational database management and data retrieval for the given database. Also, implementation of the ad-hoc query applications in a relational database using SQL.
-
+---
 	
 	<CREATING TABLE: pilot>
 	
@@ -94,57 +92,66 @@ AIM: Establishing an environment for relational database management and data ret
 		-> constraint pk_id primary key( mcode )
 		-> ) ;
 		
-	-----------------
+-----------------
 
-1.
+1.  ```
 	SELECT ctr_date, ac_number, ctr_destination, ctr_distance, hrs_flown
     -> FROM charter
     -> WHERE ac_number = '2278V' ;
+    ```
 	
-2.
+2.  ```
 	CREATE VIEW AC778V
     -> AS
     -> SELECT ctr_date, ac_number, ctr_destination, ctr_distance, hrs_flown
     -> FROM charter
     -> WHERE ac_number = '2278V' ;
+    ```
 	
-3.
+3.  ```
 	SELECT charter.ctr_date, customer.cphone, charter.ac_number, customer.careacode, charter.ctr_destination, charter.code
     -> FROM charter, customer
     -> WHERE charter.code = customer.code ;
-	
-4.
+	```
+    
+4.  ```
 	SELECT charter.ctr_Date, charter.ac_number, customer.cfname, customer.clname
     -> FROM charter, customer
     -> WHERE charter.code = customer.code AND charter.ac_number = '2278V';
+    ```
 	
-5.
-	 SELECT clname, cfname, cbalance
+5.  ```
+	SELECT clname, cfname, cbalance
     -> FROM customer
     -> WHERE cbalance > 0 GROUP BY cbalance DESC ;
-	
-6.
+	```
+    
+6.  ```
 	SELECT AVG(cbalance) as avg_bal, MIN(cbalance) as min_bal, MAX(cbalance) as max_bal, SUM(cbalance) as total_bal
     -> FROM customer ;
-	
-7.
+	```
+    
+7.  ```
 	SELECT ac_number, COUNT(ac_number) as num_of_trips, SUM(ctr_distance) as total_distance, AVG(ctr_distance) as avg_distance,
     -> SUM(hrs_flown) as total_hrs, AVG(hrs_flown) as avg_hrs
     -> FROM charter
     -> GROUP BY ac_number ;
-	
-8.
+	```
+    
+8.  ```
 	SELECT charter.ctr_Date, charter.ac_number, employee.initial as mname, charter.ctr_pilot, employee.lname, charter.hrs_flown
     -> FROM charter, employee
     -> WHERE charter.ctr_pilot = employee.enum
     -> AND charter.ctr_pilot = '' ;
-	
-9.
+	```
+    
+9.  ```
 	UPDATE aircraft SET aircraft.ac_ttaf = sum_hrs.sum_flown
     -> AND aircraft.ac_ttel = sum_hrs.sum_total
     -> WHERE aircraft.ac_number = sum_hrs.ac_number ;
-	
-10. 
+	```
+    
+10. ```
 	CREATE TRIGGER trg_ctr_hrs
     -> AFTER INSERT ON aircraft
     -> REFERENCING NEW ROW AS nrow
@@ -154,6 +161,6 @@ AIM: Establishing an environment for relational database management and data ret
     -> AND aircraft.ac_ttel = sum_hrs.sum_total
     -> WHERE aircraft.ac_number = sum_hrs.ac_number ;
 	-> end ;
+	```
 	
-	
-=====================================================END========================================================================
+---
