@@ -95,7 +95,7 @@
 	
 2. 
 
-	<INSERT: CLIENT_MASTER> 
+<INSERT: CLIENT_MASTER> 
 ```	
 INSERT INTO client_master VALUES ( 'C00001', 'Ivan Bayross', 'Bombay', 400054, 'Maharashtra', 15000 ) ;
 ```
