@@ -81,7 +81,7 @@ Part-B
 	> ALTER TABLE STUDENT ADD ( total numeric(5) not null ) ;
 	```
 
-4. 	```
+4. ```
 	> UPDATE STUDENT SET total = maths + phy + chem ;
 
 	<desc STUDENT>
@@ -95,7 +95,7 @@ Part-B
 	| phy     | decimal(4,0) | NO   |     | NULL    |       |
 	| total   | decimal(5,0) | NO   |     | NULL    |       |
 	+---------+--------------+------+-----+---------+-------+
-    	```
+   ```
 
 
 5. ```
