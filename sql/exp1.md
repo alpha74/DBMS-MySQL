@@ -98,7 +98,7 @@ Part-B
     	```
 
 
-5. 	```
+5. ```
 	> ALTER TABLE STUDENT ADD ( average numeric(5,2) not null ) ;
 	<desc STUDENT>
 	+---------+--------------+------+-----+---------+-------+
@@ -112,11 +112,11 @@ Part-B
 	| total   | decimal(5,0) | NO   |     | NULL    |       |
 	| average | decimal(5,2) | NO   |     | NULL    |       |
 	+---------+--------------+------+-----+---------+-------+
-    	```
+    ```
 
-6. 	```
+6. ```
 	> UPDATE STUDENT SET average = total/3 ;
-	```
+   ```
 
 
 
