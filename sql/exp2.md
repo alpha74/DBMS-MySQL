@@ -1,10 +1,8 @@
+# Solution : Experiment-2
 
-===============
- EXPERIMENT 2
-===============
+**AIM**: Perform queries on given relations/tables.
 
-AIM: Perform queries on given relations/tables.
-
+---
 
 1. 
 	<TABLE: CLIENT_MASTER>
@@ -98,39 +96,44 @@ AIM: Perform queries on given relations/tables.
 2. 
 
 	<INSERT: CLIENT_MASTER> 
-	
-		INSERT INTO client_master VALUES ( 'C00001', 'Ivan Bayross', 'Bombay', 400054, 'Maharashtra', 15000 ) ;
-		
-	<INSERT: PRODUCT_MASTER> 
+```	
+INSERT INTO client_master VALUES ( 'C00001', 'Ivan Bayross', 'Bombay', 400054, 'Maharashtra', 15000 ) ;
+```
+<INSERT: PRODUCT_MASTER> 
+```
+INSERT INTO product_master VALUES ( 'P00001', '1.44 Floppies', 5, 'Piece', 100, 20, 525, 500 ) ;
+```
+<INSERT: SALESMAN_MASTER> 
+```		
+INSERT INTO salesman_master VALUES ( 'S00001', 'Kiran', 'A/14', 'Worli', 'Bombay', 400002, 'Maharashtra', 3000, 100, 50, 'Good' ) ;
+```  
 
-		INSERT INTO product_master VALUES ( 'P00001', '1.44 Floppies', 5, 'Piece', 100, 20, 525, 500 ) ;
-
-	<INSERT: SALESMAN_MASTER> 
-		
-		INSERT INTO salesman_master VALUES ( 'S00001', 'Kiran', 'A/14', 'Worli', 'Bombay', 400002, 'Maharashtra', 3000, 100, 50, 'Good' ) ;
 		
 		
-3. 	
+3. 	```
 	a) SELECT name FROM client_master ;
 	b) SELECT * FROM client_master ;
 	c) SELECT name, city FROM client_master ;
 	d) SELECT description FROM product_master ;
 	e) SELECT name FROM client_master WHERE city = 'Bombay' ;
 	f) SELECT salesman_name FROM salesman_master WHERE sal_amt = 3000.00 ;
+    ```
 
 
-4.
+4.  ```
 	a) UPDATE client_master SET city = 'Bombay' WHERE client_no = 'C00005' ;
 	b) UPDATE client_master SET bal_due = 1000.00 WHERE client_no = 'C00001' ;
 	c) UPDATE product_master SET cost_price = 950.00 WHERE product_no = 'P07865' ;
 	d) UPDATE salesman_master SET s_city = 'Bombay' ;
+    ```
 	
-5.
+5.  ```
 	a) DELETE FROM salesman_master WHERE sal_amt = '3500' ;
 	b) DELETE FROM product_master WHERE qty_on_hand = 100 ;
 	c) DELETE FROM client_master WHERE state = 'Tamil Nadu' ;
-	
-6.
+	```
+    
+6.  ```
 	a) ALTER TABLE client_master ADD telephone numeric(10) ;
 		<desc client_master>
 		+-----------+---------------+------+-----+---------+-------+
@@ -159,13 +162,15 @@ AIM: Perform queries on given relations/tables.
 		| sell_price        | decimal(10,2) | YES  |     | NULL    |       |
 		| cost_price        | decimal(8,2)  | YES  |     | NULL    |       |
 		+-------------------+---------------+------+-----+---------+-------+
+     ```
 	
-7. 
+7. ```
 	a) DROP TABLE client_master ;
+   ```
 
-8.
+8. ```
 	a)  ALTER TABLE salesman_master RENAME TO sman_master ;
+   ``` 	
 	
 	
-	
-=========================END===================================================
+---
