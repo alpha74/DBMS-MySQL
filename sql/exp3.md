@@ -7,20 +7,20 @@
 1.  
 ``` 
 	CREATE TABLE employee
-    -> (
-    -> enum numeric(4,0) not null unique primary key,
-    -> fname varchar(15) not null,
-    -> mname varchar(1),
-    -> lname varchar(15) not null,
-    -> birthdate date not null,
-    -> gender enum( 'M', 'F'),
-    -> ssn varchar(10) not null unique,
-    -> job_title enum( 'Lecturer', 'Professor', 'Asst. Professor', 'Sr. Lecturer' ) not null,
-    -> salary numeric(7,2) not null,
-    -> hiredate date not null,
-    -> tax numeric(6,2) not null,
-    -> department enum('Biotechnology', 'Computer Science', 'Nano Technology', 'Information Technology' ) not null
-    -> );
+    (
+    enum numeric(4,0) not null unique primary key,
+    fname varchar(15) not null,
+    mname varchar(1),
+    lname varchar(15) not null,
+    birthdate date not null,
+    gender enum( 'M', 'F'),
+    ssn varchar(10) not null unique,
+    job_title enum( 'Lecturer', 'Professor', 'Asst. Professor', 'Sr. Lecturer' ) not null,
+    salary numeric(7,2) not null,
+    hiredate date not null,
+    tax numeric(6,2) not null,
+    department enum('Biotechnology', 'Computer Science', 'Nano Technology', 'Information Technology' ) not null
+    );
 	
 	
 	<desc employee>
@@ -54,8 +54,9 @@
 	
 4.
 ```
-	-> SELECT enum, fname, mname, lname, birthdate, salary, gender FROM employee ;
-	-> SELECT enum, ssn, job_title, department, hiredate, tax FROM employee ;
+	SELECT enum, fname, mname, lname, birthdate, salary, gender FROM employee ;
+
+	SELECT enum, ssn, job_title, department, hiredate, tax FROM employee ;
 ```
 5. 
 ```	
@@ -81,8 +82,8 @@
 
 9.
 ```
-	-> INSERT INTO employee VALUES
-	-> ( '9211', 'Deepak', 'M', 'Lakhanpal', '1978-02-28', 'M', '14OR333567', 'Lecturer', 120000.00, '1999-04-22', 12000.00, 'Biotechnology' ) ;
+	INSERT INTO employee VALUES
+	( '9211', 'Deepak', 'M', 'Lakhanpal', '1978-02-28', 'M', '14OR333567', 'Lecturer', 120000.00, '1999-04-22', 12000.00, 'Biotechnology' ) ;
 ```	
 	
 ---
