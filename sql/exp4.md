@@ -54,36 +54,36 @@
     ```
 	
 2.  ```
-	 SELECT DISTINCT(supplier.name), dept.dnum, dept.name
-    -> FROM supplier, dept, supply
-    -> WHERE supplier.snum = supply.snum AND
-    -> dept.dnum = supply.dnum
-    -> AND dept.name = 'Personnel' ;
+	SELECT DISTINCT(supplier.name), dept.dnum, dept.name
+    FROM supplier, dept, supply
+    WHERE supplier.snum = supply.snum AND
+    dept.dnum = supply.dnum
+    AND dept.name = 'Personnel' ;
     ```
 	
 3.  ```
-	 SELECT DISTINCT(supplier.name)
-    -> FROM supplier, dept, supply
-    -> WHERE supplier.snum = supply.snum AND
-    -> dept.dnum = supply.dnum
-    -> AND supplier.city = 'UMR'
-    -> AND dept.area = 'N' ;
+	SELECT DISTINCT(supplier.name)
+    FROM supplier, dept, supply
+    WHERE supplier.snum = supply.snum AND
+    dept.dnum = supply.dnum
+    AND supplier.city = 'UMR'
+    AND dept.area = 'N' ;
 	```
    
 4.  ```
 	SELECT emp.name, dept.name
-    -> FROM emp, dept
-    -> WHERE emp.dnum = dept.dnum
-    -> AND
-    -> emp.name LIKE 'A%' ;
+    FROM emp, dept
+    WHERE emp.dnum = dept.dnum
+    AND
+    emp.name LIKE 'A%' ;
     ```
 	
 5.  ```
 	SELECT supplier.name, supply.qty, dept.name
-    -> FROM supplier, supply, dept
-    -> WHERE supplier.snum = supply.snum
-    -> AND supply.dnum = dept.dnum
-    -> AND supply.pnum = 'KK78' ;
+    FROM supplier, supply, dept
+    WHERE supplier.snum = supply.snum
+    AND supply.dnum = dept.dnum
+    AND supply.pnum = 'KK78' ;
     ```
 	
 6.  ```
@@ -118,26 +118,26 @@
 	
 8.  ```
 	INSERT INTO dept VALUES
-    -> ( 988, 'Inventory&Purchase', 'S', 23 ) ;
+    ( 988, 'Inventory&Purchase', 'S', 23 ) ;
 	
 	INSERT INTO emp VALUES
-    -> ( 9218, 'Jyotika', 890270.00, 89000.00, 988, 23 ) ;
+    ( 9218, 'Jyotika', 890270.00, 89000.00, 988, 23 ) ;
     ```
 	
 9.  ```
 	SELECT emp.enum, emp.name
-    -> FROM emp, dept
-    -> WHERE emp.dnum = dept.dnum
-    -> AND dept.area = 'S'
-    -> AND emp.sal > 800000 ;
+    FROM emp, dept
+    WHERE emp.dnum = dept.dnum
+    AND dept.area = 'S'
+    AND emp.sal > 800000 ;
     ```
 	
 10. ```
 	SELECT dept.name AS dep_name, supplier.name AS supplier_name
-    -> FROM dept, supply, supplier
-    -> WHERE supplier.snum = supply.snum
-    -> AND dept.dnum = supply.dnum
-    -> AND supply.pnum = 'PD33' ;
+    FROM dept, supply, supplier
+    WHERE supplier.snum = supply.snum
+    AND dept.dnum = supply.dnum
+    AND supply.pnum = 'PD33' ;
     ```
 	
 
