@@ -8,14 +8,14 @@
 	<TABLE: CLIENT_MASTER>
 	
 		CREATE TABLE client_master
-		-> (
-		-> client_no varchar(6) not null unique primary key,
-		-> name varchar(20) not null,
-		-> city varchar(15),
-		-> pincode numeric(6),
-		-> state varchar(10),
-		-> bal_due numeric(10,2)
-		-> ) ;
+		(
+		client_no varchar(6) not null unique primary key,
+		name varchar(20) not null,
+		city varchar(15),
+		pincode numeric(6),
+		state varchar(10),
+		bal_due numeric(10,2)
+		) ;
 		
 		<desc client_master>
 		+-----------+---------------+------+-----+---------+-------+
@@ -33,16 +33,16 @@
 	<TABLE: PRODUCT_MASTER>
 	
 		CREATE TABLE product_master
-		-> (
-		-> product_no varchar(6) not null unique primary key,
-		-> description varchar(20) not null,
-		-> profit_percentage numeric(4,2),
-		-> unit_measure varchar(10),
-		-> qty_on_hand numeric(8),
-		-> reorder_level numeric(8),
-		-> sell_price numeric(8,2),
-		-> cost_price numeric(8,2)
-		-> ) ;
+		(
+		product_no varchar(6) not null unique primary key,
+		description varchar(20) not null,
+		profit_percentage numeric(4,2),
+		unit_measure varchar(10),
+		qty_on_hand numeric(8),
+		reorder_level numeric(8),
+		sell_price numeric(8,2),
+		cost_price numeric(8,2)
+		) ;
 		
 		<desc  product_master>
 		+-------------------+--------------+------+-----+---------+-------+
@@ -61,19 +61,19 @@
 	<TABLE: SALESMAN_MASTER>
 	
 		CREATE TABLE salesman_master
-		-> (
-		-> salesman_no varchar(6) not null unique primary key,
-		-> salesman_name varchar(35) not null,
-		-> address1 varchar(15),
-		-> address2 varchar(15),
-		-> s_city varchar(15),
-		-> pincode numeric(6),
-		-> state varchar(15),
-		-> sal_amt numeric(8,2),
-		-> tgt_to_get numeric(6,2),
-		-> ytd_sales numeric(8,2),
-		-> remarks varchar(15)
-		-> ) ;
+		(
+		salesman_no varchar(6) not null unique primary key,
+		salesman_name varchar(35) not null,
+		address1 varchar(15),
+		address2 varchar(15),
+		s_city varchar(15),
+		pincode numeric(6),
+		state varchar(15),
+		sal_amt numeric(8,2),
+		tgt_to_get numeric(6,2),
+		ytd_sales numeric(8,2),
+		remarks varchar(15)
+		) ;
 	
 		<desc salesman_master>
 		+---------------+--------------+------+-----+---------+-------+
